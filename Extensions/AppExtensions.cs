@@ -19,7 +19,7 @@ public static class AppExtensions
         Configuration.ApiKey = builder.Configuration.GetValue<string>("ApiKey");
 
         var smtp = new Configuration.SmtpConfiguration();
-        builder.Configuration.GetSection("SmtpConfiguration").Bind(smtp);
+        builder.Configuration.GetSection("Smtp").Bind(smtp);
         Configuration.Smtp = smtp;
     }
 
@@ -69,10 +69,10 @@ public static class AppExtensions
 
     public static void ConfigureServices(this WebApplicationBuilder builder)
     {
-        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-        builder.Services.AddDbContext<BlogDataContext>(
-            options =>
-                options.UseSqlServer(connectionString));
+        // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+        // builder.Services.AddDbContext<BlogDataContext>(
+        //     options =>
+        //         options.UseSqlServer(connectionString));
         builder.Services.AddTransient<TokenService>();
         builder.Services.AddTransient<EmailService>();
     }

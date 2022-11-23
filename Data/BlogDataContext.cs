@@ -17,7 +17,8 @@ namespace Blog.Data
         public DbSet<User> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer("DefaultConnection");
+            => options.UseSqlServer(@"Server=tcp:blog2812server.database.windows.net,1433;Initial Catalog=blog2812;Persist Security Info=False;User ID=blogadmin;Password=SYNgates-9090;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+");
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CategoryMap());
