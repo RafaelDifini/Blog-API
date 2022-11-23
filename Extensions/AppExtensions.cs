@@ -69,10 +69,10 @@ public static class AppExtensions
 
     public static void ConfigureServices(this WebApplicationBuilder builder)
     {
-        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+        //var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
         builder.Services.AddDbContext<BlogDataContext>(
             options =>
-                options.UseSqlServer(connectionString));
+                options.UseSqlServer(@"Server=tcp:blog2812server.database.windows.net,1433;Initial Catalog=blog2812;Persist Security Info=False;User ID=blogadmin;Password=SYNgates-9090;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
         builder.Services.AddTransient<TokenService>();
         builder.Services.AddTransient<EmailService>();
     }
