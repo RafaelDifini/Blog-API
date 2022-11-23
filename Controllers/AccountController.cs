@@ -42,7 +42,8 @@ public class AccountController : ControllerBase
             emailService.Send(user.Name, user.Email, "Bem vindo ao blog!", $"Sua senha é {password}");
             return Ok(new ResultViewModel<dynamic>(new
             {
-                user = user.Email, password
+                user = user.Email,
+                password
             }));
         }
         catch (DbUpdateException)
