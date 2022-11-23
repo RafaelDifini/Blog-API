@@ -1,3 +1,4 @@
+using Blog.Data;
 using Blog.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ builder.LoadConfiguration();
 builder.ConfigureAuthentication();
 builder.ConfigureMvc();
 builder.ConfigureServices();
+builder.Services.AddDbContext<BlogDataContext>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
