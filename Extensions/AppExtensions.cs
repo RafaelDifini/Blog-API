@@ -70,7 +70,9 @@ public static class AppExtensions
     public static void ConfigureServices(this WebApplicationBuilder builder)
     {
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-        builder.Services.AddDbContext<BlogDataContext>(options => options.UseSqlServer(connectionString));
+        builder.Services.AddDbContext<BlogDataContext>(
+            options =>
+                options.UseSqlServer(connectionString));
         builder.Services.AddTransient<TokenService>();
         builder.Services.AddTransient<EmailService>();
     }
