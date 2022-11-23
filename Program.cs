@@ -1,7 +1,4 @@
-using Blog;
-using Blog.Data;
 using Blog.Extensions;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +6,6 @@ builder.LoadConfiguration();
 builder.ConfigureAuthentication();
 builder.ConfigureMvc();
 builder.ConfigureServices();
-
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
