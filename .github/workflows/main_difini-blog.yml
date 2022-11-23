@@ -74,6 +74,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'difini-blog'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_0579faaa4c9841e0adfb080326286a0f }}
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0858AB2BFA0A4EE39AE19AEC9DC163C7 }}
           package: .
